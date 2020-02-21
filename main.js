@@ -17,7 +17,6 @@ function createWindow() {
 
    win.webContents.openDevTools();
    // Ouvre les DevTools.
-   win = null;
 }
 const menu = Menu.buildFromTemplate([
    {
@@ -67,6 +66,5 @@ app.on('activate', () => {
 });
 
 ipc.on('update-notify-value', function(event, arg) {
-   console.log(arg);
    win.webContents.send('targetPriceVal', arg);
 });
